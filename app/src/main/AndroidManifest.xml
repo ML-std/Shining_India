@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShiningIndia">
-        <activity android:name=".Register.RegisterActivity"></activity>
+        <activity android:name=".Booking.BookingActivity"></activity>
+        <activity android:name=".Menu.ItemActivity" />
+        <activity android:name=".Order.OrderActivity" />
+        <activity android:name=".Menu.MenuActivity" />
+        <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
