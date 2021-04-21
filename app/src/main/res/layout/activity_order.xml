@@ -6,4 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".Order.OrderActivity">
 
+    <TextView
+        android:id="@+id/addressTextView"
+        android:layout_width="126dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:text="Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/addressText"
+        android:layout_width="211dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
+
+    <RadioGroup
+        android:id="@+id/paymentOptionsGroup"
+        android:layout_width="194dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentOptionsView">
+
+        <RadioButton
+            android:id="@+id/cashButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cash" />
+
+        <RadioButton
+            android:id="@+id/creditCartButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Credit Cart" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/paymentOptionsView"
+        android:layout_width="188dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="28dp"
+        android:text="Payment Options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressText" />
+
+    <TextView
+        android:id="@+id/totalPriceTextView"
+        android:layout_width="144dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentOptionsGroup" />
+
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:onClick="order"
+        android:text="Order!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

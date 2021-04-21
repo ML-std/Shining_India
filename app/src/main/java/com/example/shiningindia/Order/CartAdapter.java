@@ -1,6 +1,4 @@
-package com.example.shiningindia.Menu;
-
-
+package com.example.shiningindia.Order;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +8,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.shiningindia.Menu.MenuItem;
+import com.example.shiningindia.Menu.OnItemClickListener;
 import com.example.shiningindia.R;
 
 import java.util.ArrayList;
 
-public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
-    private  ArrayList<MenuItem> menuItems;
+import static com.example.shiningindia.Menu.MenuActivity.cart;
+
+public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
+
     private OnItemClickListener mOnItemClickListener;
 
     public void setOnItemClickListener(OnItemClickListener listener){
@@ -23,22 +25,20 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         mOnItemClickListener = listener;
     }
 
-    public MenuAdapter(ArrayList<MenuItem> menuItems){
-    this.menuItems = menuItems;
-    }
 
-    public static class MenuViewHolder extends RecyclerView.ViewHolder{
+
+    public static class CartViewHolder extends RecyclerView.ViewHolder{
 
         public ImageView mImageView;
         public TextView mNameText;
-        public TextView mContentText;
+        public TextView mQuantity;
         public TextView mPriceText;
 
-        public MenuViewHolder(@NonNull View itemView, OnItemClickListener listener) {
+        public CartViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.itemImageView);
             mNameText = itemView.findViewById(R.id.nameTextView);
-            mContentText = itemView.findViewById(R.id.contentTextView);
+            mQuantity = itemView.findViewById(R.id.quantityTextView);
             mPriceText = itemView.findViewById(R.id.priceTextView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -57,27 +57,26 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     }
     @NonNull
     @Override
-    public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item,parent,false);
-        return new MenuViewHolder(view,mOnItemClickListener);
+    public CartAdapter.CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item,parent,false);
+        return new CartAdapter.CartViewHolder(view,mOnItemClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CartAdapter.CartViewHolder holder, int position) {
 
-        MenuItem currentItem = menuItems.get(position);
+        MenuItem currentItem = cart.items.get(position);
         holder.mImageView.setImageResource(currentItem.getImageResource());
         holder.mNameText.setText(currentItem.getName());
-        holder.mContentText.setText(currentItem.getMenuContent());
-        holder.mPriceText.setText("$" + currentItem.getPrice());
+        holder.mQuantity.setText("" + currentItem.getQuantity());
+        holder.mPriceText.setText("$" + currentItem.getPrice()*currentItem.getQuantity());
     }
 
 
 
     @Override
     public int getItemCount() {
-        return menuItems.size();
+        return cart.items.size();
     }
-
 
 }

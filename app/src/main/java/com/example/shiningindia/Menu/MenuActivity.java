@@ -29,16 +29,16 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         cart = new Cart();
         menuItems = new ArrayList<MenuItem>();
-        menuItems.add(new MenuItem(R.drawable.amritsai_naan,"Amritsari Naan","Two Nan with Unlimited Chole + Raita + Salad","$11.95"));
-        menuItems.add(new MenuItem(R.drawable.chole_bhature,"Chole Bhature","Two Bhature with Unlimited Chole + SaladWhole Day Menu","$11.95"));
-        menuItems.add(new MenuItem(R.drawable.vegeterian_thali,"Vegeterian Thali","Three vegetarian curries of chef’s special, plain naan, rice, desert, raita and salad","$15.95"));
-        menuItems.add(new MenuItem(R.drawable.non_vegetarian_thali,"Non-Vegeterian Thali","Three non-vegetarian curries of chef’s special,plain naan, rice desert, raita and salad","$17.95"));
+        menuItems.add(new MenuItem(R.drawable.amritsai_naan,"Amritsari Naan","Two Nan with Unlimited Chole + Raita + Salad",11.95));
+        menuItems.add(new MenuItem(R.drawable.chole_bhature,"Chole Bhature","Two Bhature with Unlimited Chole + SaladWhole Day Menu",11.95));
+        menuItems.add(new MenuItem(R.drawable.vegeterian_thali,"Vegeterian Thali","Three vegetarian curries of chef’s special, plain naan, rice, desert, raita and salad",15.95));
+        menuItems.add(new MenuItem(R.drawable.non_vegetarian_thali,"Non-Vegeterian Thali","Three non-vegetarian curries of chef’s special,plain naan, rice desert, raita and salad",17.95));
 
         buildRecyclerView();
 
     }
     public void buildRecyclerView(){
-        mRecyclerView = findViewById(R.id.menuRecyclerView);
+        mRecyclerView = findViewById(R.id.cartRecyclerView);
         mRecyclerView.setHasFixedSize(false);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerAdapter = new MenuAdapter(menuItems);
@@ -57,4 +57,6 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), CartActivity.class);
         startActivity(intent);
     }
+
+
 }

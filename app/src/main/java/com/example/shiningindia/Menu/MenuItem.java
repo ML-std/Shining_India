@@ -5,13 +5,13 @@ import java.io.Serializable;
 public class MenuItem implements Serializable {
 
     private int imageResource;
-    private String price;
+    private double price;
     private String name;
     private String menuContent;
     private int quantity;
 
 
-    MenuItem(int imageResource, String name, String menuContent, String price){
+    MenuItem(int imageResource, String name, String menuContent, double price){
         this.imageResource = imageResource;
         this.name = name;
         this.menuContent = menuContent;
@@ -32,7 +32,7 @@ public class MenuItem implements Serializable {
         return menuContent;
     }
 
-    public String getPrice(){
+    public double getPrice(){
         return price;
     }
 

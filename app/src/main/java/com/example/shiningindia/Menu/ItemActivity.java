@@ -30,7 +30,6 @@ public class ItemActivity extends AppCompatActivity {
     private void createItem(){
         Intent initialIntent = getIntent();
          menuItem = (MenuItem)initialIntent.getSerializableExtra("menuItem");
-    
         mItemImage = findViewById(R.id.imageView);
         mItemName = findViewById(R.id.nameView);
         mItemContent = findViewById(R.id.contentView);
@@ -39,8 +38,8 @@ public class ItemActivity extends AppCompatActivity {
         mItemImage.setImageResource(menuItem.getImageResource());
         mItemName.setText(menuItem.getName());
         mItemContent.setText(menuItem.getMenuContent());
-        mItemPrice.setText(menuItem.getPrice());
-        mItemQuantity.setText(menuItem.getQuantity());
+        mItemPrice.setText("$" + menuItem.getPrice());
+        mItemQuantity.setText(""+menuItem.getQuantity());
     }
     public void increaseQuantity(View view){
         menuItem.setQuantity(menuItem.getQuantity() + 1);
@@ -53,9 +52,12 @@ public class ItemActivity extends AppCompatActivity {
     }
     public void addToCart(View view){
         cart.addToCart(menuItem);
+        Toast.makeText(getApplicationContext(),"Item is added to the cart",Toast.LENGTH_LONG).show();
+
     }
     public void goToCart(View view){
         Intent intent = new Intent(getApplicationContext(), CartActivity.class);
         startActivity(intent);
     }
+
 }
