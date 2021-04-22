@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shiningindia.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
@@ -69,7 +70,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         holder.mImageView.setImageResource(currentItem.getImageResource());
         holder.mNameText.setText(currentItem.getName());
         holder.mContentText.setText(currentItem.getMenuContent());
-        holder.mPriceText.setText("$" + currentItem.getPrice());
+        holder.mPriceText.setText("$" + new DecimalFormat("##.##").format(currentItem.getPrice()));
     }
 
 

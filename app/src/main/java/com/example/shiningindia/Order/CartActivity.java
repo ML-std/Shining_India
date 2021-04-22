@@ -6,12 +6,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.shiningindia.Menu.MenuItem;
 import com.example.shiningindia.R;
+
+import java.text.DecimalFormat;
 
 import static com.example.shiningindia.Menu.MenuActivity.cart;
 
@@ -29,8 +33,9 @@ public class CartActivity extends AppCompatActivity {
         buildRecyclerView();
         mOrderButton = findViewById(R.id.orderActivityButton);
         mTotalPriceView = findViewById(R.id.totalPriceView);
-        mTotalPriceView.setText("Total Price = $" + calculateTotalPrice());
+        mTotalPriceView.setText("Total Price = $" + new DecimalFormat("##.##").format(calculateTotalPrice()));
         mOrderButton = findViewById(R.id.orderActivityButton);
+
     }
     public void buildRecyclerView(){
         mRecyclerView = findViewById(R.id.cartRecyclerView);

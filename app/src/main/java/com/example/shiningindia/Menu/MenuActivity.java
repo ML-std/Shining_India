@@ -35,7 +35,9 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationView.setSelectedItemId(R.id.menu_item);
+        if (cart == null){
         cart = new Cart();
+        }
         menuItems = new ArrayList<>();
         menuItems.add(new MenuItem(R.drawable.amritsai_naan,"Amritsari Naan","Two Nan with Unlimited Chole + Raita + Salad",11.95));
         menuItems.add(new MenuItem(R.drawable.chole_bhature,"Chole Bhature","Two Bhature with Unlimited Chole + SaladWhole Day Menu",11.95));
@@ -63,32 +65,10 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void goToCart(View view){
         Intent intent = new Intent(getApplicationContext(), CartActivity.class);
+        intent.putExtra("Cart",cart);
         startActivity(intent);
     }
-    @Override
-    public boolean onOptionsItemSelected(android.view.MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.home_item:
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                return true;
 
-            case R.id.menu_item:
-                //startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-
-                return true;
-
-            case R.id.booking_item:
-                startActivity(new Intent(getApplicationContext(), BookingActivity.class));
-                return true;
-
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-
-        }
-
-    }
         public void onNavbarClicked(){
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override

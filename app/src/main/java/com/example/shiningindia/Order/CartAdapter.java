@@ -12,6 +12,7 @@ import com.example.shiningindia.Menu.MenuItem;
 import com.example.shiningindia.Menu.OnItemClickListener;
 import com.example.shiningindia.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import static com.example.shiningindia.Menu.MenuActivity.cart;
@@ -69,7 +70,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.mImageView.setImageResource(currentItem.getImageResource());
         holder.mNameText.setText(currentItem.getName());
         holder.mQuantity.setText("" + currentItem.getQuantity());
-        holder.mPriceText.setText("$" + currentItem.getPrice()*currentItem.getQuantity());
+        holder.mPriceText.setText("$" + new DecimalFormat("##.##").format(currentItem.getPrice()*currentItem.getQuantity()));
     }
 
 

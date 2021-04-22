@@ -2,9 +2,10 @@ package com.example.shiningindia.Order;
 
 import com.example.shiningindia.Menu.MenuItem;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public  class Cart {
+public  class Cart implements Serializable {
     public  ArrayList<MenuItem> items;
 
     public Cart(){
@@ -21,5 +22,9 @@ public  class Cart {
 
     public  void removeAll(){
         items.clear();
+    }
+
+    public int size(){
+        return this.items.size();
     }
 }

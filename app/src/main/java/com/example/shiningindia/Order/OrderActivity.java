@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.example.shiningindia.Menu.MenuActivity;
 import com.example.shiningindia.R;
 
+import java.text.DecimalFormat;
+
 public class OrderActivity extends AppCompatActivity {
 
     double totalPrice;
@@ -42,8 +44,7 @@ public class OrderActivity extends AppCompatActivity {
         mCreditCartButton = findViewById(R.id.creditCartButton);
         mOrderButton = findViewById(R.id.orderButton);
 
-        mTotalPriceTextView.setText("Total Price = $" + totalPrice );
-
+        mTotalPriceTextView.setText("Total Price = $" + new DecimalFormat("##.##").format(totalPrice) );
     }
 
     public void order(View view){
