@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
-    private  ArrayList<MenuItem> menuItems;
+    private final ArrayList<MenuItem> menuItems;
     private OnItemClickListener mOnItemClickListener;
 
     public void setOnItemClickListener(OnItemClickListener listener){
@@ -41,14 +41,11 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
             mNameText = itemView.findViewById(R.id.nameTextView);
             mContentText = itemView.findViewById(R.id.contentTextView);
             mPriceText = itemView.findViewById(R.id.priceTextView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null){
-                        int position = getAbsoluteAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION){
-                            listener.onItemClick(position);
-                        }
+            itemView.setOnClickListener(v -> {
+                if (listener != null){
+                    int position = getAbsoluteAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION){
+                        listener.onItemClick(position);
                     }
                 }
             });
@@ -70,7 +67,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         holder.mImageView.setImageResource(currentItem.getImageResource());
         holder.mNameText.setText(currentItem.getName());
         holder.mContentText.setText(currentItem.getMenuContent());
-        holder.mPriceText.setText("$" + new DecimalFormat("##.##").format(currentItem.getPrice()));
+        String price = "$" + new DecimalFormat("##.##").format(currentItem.getPrice());
+        holder.mPriceText.setText(price);
     }
 
 

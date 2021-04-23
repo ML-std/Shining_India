@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class MenuItem implements Serializable {
 
-    private int imageResource;
-    private double price;
-    private String name;
-    private String menuContent;
+    private final int imageResource;
+    private final double price;
+    private final String name;
+    private final String menuContent;
     private int quantity;
 
 

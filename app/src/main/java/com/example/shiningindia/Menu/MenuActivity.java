@@ -1,6 +1,5 @@
 package com.example.shiningindia.Menu;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,13 +53,10 @@ public class MenuActivity extends AppCompatActivity {
         mRecyclerAdapter = new MenuAdapter(menuItems);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mRecyclerAdapter);
-        mRecyclerAdapter.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Intent ItemIntent = new Intent(getApplicationContext(),ItemActivity.class);
-                ItemIntent.putExtra("menuItem", menuItems.get(position));
-                startActivity(ItemIntent);
-            }
+        mRecyclerAdapter.setOnItemClickListener(position -> {
+            Intent ItemIntent = new Intent(getApplicationContext(),ItemActivity.class);
+            ItemIntent.putExtra("menuItem", menuItems.get(position));
+            startActivity(ItemIntent);
         });
     }
     public void goToCart(View view){
@@ -70,17 +66,14 @@ public class MenuActivity extends AppCompatActivity {
     }
 
         public void onNavbarClicked(){
-            bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull android.view.MenuItem item) {
-                    if (item.getItemId() == R.id.home_item){
-                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                    }
-                    else if (item.getItemId() == R.id.booking_item){
-                        startActivity(new Intent(getApplicationContext(), BookingActivity.class));
-                    }
-                    return true;
+            bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+                if (item.getItemId() == R.id.home_item){
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 }
+                else if (item.getItemId() == R.id.booking_item){
+                    startActivity(new Intent(getApplicationContext(), BookingActivity.class));
+                }
+                return true;
             });
 }
 }

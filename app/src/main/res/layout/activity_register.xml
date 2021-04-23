@@ -12,12 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
         android:ems="10"
-        android:hint="Enter Phone Number"
+        android:hint="@string/enter_phone_number"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="@string/enter_phone_number" />
 
     <EditText
         android:id="@+id/createPasswordText"
@@ -25,12 +26,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:hint="Enter Password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumberText" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberText"
+        android:autofillHints="@string/enter_password" />
 
     <EditText
         android:id="@+id/createPasswordText2"
@@ -38,11 +40,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:ems="10"
-        android:hint="Enter Password Again"
+        android:hint="@string/enter_password_again"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPasswordText" />
+        app:layout_constraintTop_toBottomOf="@+id/createPasswordText"
+        android:autofillHints="@string/enter_password_again" />
 
     <Button
         android:id="@+id/registerButton"
@@ -50,7 +53,7 @@
         android:layout_height="97dp"
         android:layout_marginTop="28dp"
         android:onClick="register"
-        android:text="Register"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/showPassBox" />
@@ -62,7 +65,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="12dp"
-        android:text="Show Passwords"
+        android:text="@string/show_passwords"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createPasswordText2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

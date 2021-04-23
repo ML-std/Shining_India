@@ -34,7 +34,6 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
         Intent orderIntent = getIntent();
         totalPrice =(double) orderIntent.getSerializableExtra("totalPrice");
-
         mAddressText = findViewById(R.id.addressText);
         mAddressTextView = findViewById(R.id.addressTextView);
         mTotalPriceTextView = findViewById(R.id.totalPriceTextView);
@@ -43,8 +42,8 @@ public class OrderActivity extends AppCompatActivity {
         mCashButton = findViewById(R.id.cashButton);
         mCreditCartButton = findViewById(R.id.creditCartButton);
         mOrderButton = findViewById(R.id.orderButton);
-
-        mTotalPriceTextView.setText("Total Price = $" + new DecimalFormat("##.##").format(totalPrice) );
+        String totalPriceText = "Total Price = $" + new DecimalFormat("##.##").format(totalPrice);
+        mTotalPriceTextView.setText(totalPriceText);
     }
 
     public void order(View view){

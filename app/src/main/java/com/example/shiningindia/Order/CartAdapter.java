@@ -13,7 +13,6 @@ import com.example.shiningindia.Menu.OnItemClickListener;
 import com.example.shiningindia.R;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 import static com.example.shiningindia.Menu.MenuActivity.cart;
 
@@ -41,14 +40,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             mNameText = itemView.findViewById(R.id.nameTextView);
             mQuantity = itemView.findViewById(R.id.quantityTextView);
             mPriceText = itemView.findViewById(R.id.priceTextView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null){
-                        int position = getAbsoluteAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION){
-                            listener.onItemClick(position);
-                        }
+            itemView.setOnClickListener(v -> {
+                if (listener != null){
+                    int position = getAbsoluteAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION){
+                        listener.onItemClick(position);
                     }
                 }
             });
@@ -69,8 +65,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         MenuItem currentItem = cart.items.get(position);
         holder.mImageView.setImageResource(currentItem.getImageResource());
         holder.mNameText.setText(currentItem.getName());
-        holder.mQuantity.setText("" + currentItem.getQuantity());
-        holder.mPriceText.setText("$" + new DecimalFormat("##.##").format(currentItem.getPrice()*currentItem.getQuantity()));
+        String quantity = "" + currentItem.getQuantity();
+        String price = "$" + new DecimalFormat("##.##").format(currentItem.getPrice()*currentItem.getQuantity());
+        holder.mQuantity.setText(quantity);
+        holder.mPriceText.setText(price);
     }
 
 

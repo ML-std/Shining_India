@@ -9,4 +9,25 @@
     <string name="phone_number">Phone number</string>
     <string name="register">Register</string>
     <string name="welcome">Welcome</string>
+    <string name="increase">+</string>
+    <string name="placeHolder">-----</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="decrease">-</string>
+    <string name="todo">TODO</string>
+    <string name="food_image">Food Image</string>
+    <string name="show_hide_box">showHideBox</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="address">Address</string>
+    <string name="cash">Cash</string>
+    <string name="credit_cart">Credit Cart</string>
+    <string name="payment_options">Payment Options</string>
+    <string name="order">Order!</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_password_again">Enter Password Again</string>
+    <string name="show_passwords">Show Passwords</string>
+    <string name="name">Name</string>
+    <string name="quantity_text">Quantity</string>
+    <string name="content">Content</string>
+    <string name="price">Price</string>
 </resources>

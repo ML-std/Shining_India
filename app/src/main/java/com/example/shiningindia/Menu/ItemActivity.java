@@ -23,6 +23,7 @@ public class ItemActivity extends AppCompatActivity {
         TextView mItemPrice;
         TextView mItemQuantity;
         MenuItem menuItem;
+        String quantity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,20 +41,23 @@ public class ItemActivity extends AppCompatActivity {
         mItemImage.setImageResource(menuItem.getImageResource());
         mItemName.setText(menuItem.getName());
         mItemContent.setText(menuItem.getMenuContent());
-        mItemPrice.setText("$" + new DecimalFormat("##.##").format(menuItem.getPrice()));
-        mItemQuantity.setText(""+menuItem.getQuantity());
+        quantity = "" + menuItem.getQuantity();
+        String price = "$" + new DecimalFormat("##.##").format(menuItem.getPrice());
+        mItemPrice.setText(price);
+        mItemQuantity.setText( quantity);
     }
     public void increaseQuantity(View view){
         menuItem.setQuantity(menuItem.getQuantity() + 1);
-        mItemQuantity.setText(""+menuItem.getQuantity());
+        quantity = ""+menuItem.getQuantity();
+        mItemQuantity.setText(quantity);
 
 
     }
     public void decreaseQuantity(View view){
-        if(menuItem.getQuantity() != 0){
+        if(menuItem.getQuantity() != 1){
             menuItem.setQuantity(menuItem.getQuantity() - 1);
-            mItemQuantity.setText(""+menuItem.getQuantity());
-
+            quantity = ""+menuItem.getQuantity();
+            mItemQuantity.setText(quantity);
         }
     }
     public void addToCart(View view){

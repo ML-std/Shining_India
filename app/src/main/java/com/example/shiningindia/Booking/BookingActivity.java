@@ -1,6 +1,5 @@
 package com.example.shiningindia.Booking;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,17 +23,14 @@ public class BookingActivity extends AppCompatActivity {
         onNavbarClicked();
     }
     public void onNavbarClicked(){
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull android.view.MenuItem item) {
-                if (item.getItemId() == R.id.menu_item){
-                    startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-                }
-                else if (item.getItemId() == R.id.home_item){
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                }
-                return true;
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.menu_item){
+                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
             }
+            else if (item.getItemId() == R.id.home_item){
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+            }
+            return true;
         });
     }
 }

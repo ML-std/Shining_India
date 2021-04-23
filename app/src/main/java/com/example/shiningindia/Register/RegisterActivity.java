@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -40,24 +38,16 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
     public void showPassword(){
-        showPassBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked) {
-                    passwordText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    passwordText2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                } else {
-                    // hide password
-                    passwordText.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    passwordText2.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                }
+        showPassBox.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if (isChecked) {
+                passwordText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                passwordText2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                // hide password
+                passwordText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                passwordText2.setTransformationMethod(PasswordTransformationMethod.getInstance());
             }
         });
-        if (showPassBox.isSelected()){
 
-        }
-        else {
-
-        }
     }
 }

@@ -22,7 +22,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="2dp"
-            android:padding="2dp" />
+            android:padding="2dp"
+            android:contentDescription="@string/food_image" />
 
         <TextView
             android:id="@+id/nameTextView"
@@ -33,7 +34,7 @@
             android:layout_marginTop="6dp"
             android:layout_toEndOf="@id/itemImageView"
             android:layout_toRightOf="@id/itemImageView"
-            android:text="Title"
+            android:text="@string/name"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -48,9 +49,9 @@
             android:layout_marginTop="57dp"
             android:layout_toEndOf="@id/itemImageView"
             android:layout_toRightOf="@id/itemImageView"
-            android:text="Subtitle"
+            android:text="@string/content"
             android:textColor="@color/black"
-            android:textSize="10sp"
+            android:textSize="12sp"
             android:textStyle="italic"
             app:autoSizeTextType="uniform" />
 
@@ -68,7 +69,7 @@
             android:layout_marginRight="5dp"
             android:layout_toEndOf="@+id/nameTextView"
             android:layout_toRightOf="@+id/nameTextView"
-            android:text="Price"
+            android:text="@string/price"
             android:textSize="17sp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
