@@ -18,9 +18,9 @@ import static com.example.shiningindia.Menu.MenuActivity.cart;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
 
-    private OnItemClickListener mOnItemClickListener;
+    private OnDeleteClickListener mOnItemClickListener;
 
-    public void setOnItemClickListener(OnItemClickListener listener){
+    public void setOnDeleteClickListener(OnDeleteClickListener listener){
 
         mOnItemClickListener = listener;
     }
@@ -34,7 +34,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         public TextView mQuantity;
         public TextView mPriceText;
 
-        public CartViewHolder(@NonNull View itemView, OnItemClickListener listener) {
+        public CartViewHolder(@NonNull View itemView, OnDeleteClickListener listener) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.itemImageView);
             mNameText = itemView.findViewById(R.id.nameTextView);
@@ -44,7 +44,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 if (listener != null){
                     int position = getAbsoluteAdapterPosition();
                     if (position != RecyclerView.NO_POSITION){
-                        listener.onItemClick(position);
+                        listener.onDeleteClick(position);
                     }
                 }
             });

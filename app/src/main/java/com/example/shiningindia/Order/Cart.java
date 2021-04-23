@@ -15,9 +15,8 @@ public  class Cart implements Serializable {
         items.add(item);
     }
 
-    public  String removeFromCart(int index){
-
-        return items.remove(index).getName();
+    public void removeFromCart(int index){
+        items.remove(index);
     }
 
     public  void removeAll(){
@@ -26,5 +25,9 @@ public  class Cart implements Serializable {
 
     public int size(){
         return this.items.size();
+    }
+
+    public boolean isEmpty(){
+        return items.isEmpty();
     }
 }

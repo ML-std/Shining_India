@@ -65,7 +65,7 @@ public class ItemActivity extends AppCompatActivity {
         if (!itemExists){
         cart.addToCart(menuItem);
         }
-        Toast.makeText(getApplicationContext(),"Item is added to the cart : " + cart.items.get(0).getName(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Item is added to the cart",Toast.LENGTH_LONG).show();
         startActivity(new Intent(getApplicationContext(),MenuActivity.class));
 
     }

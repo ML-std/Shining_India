@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.shiningindia.Menu.MenuItem;
 import com.example.shiningindia.R;
@@ -45,6 +46,8 @@ public class CartActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mRecyclerAdapter);
 
+        mRecyclerAdapter.setOnDeleteClickListener(this::removeItem);
+
     }
     public double calculateTotalPrice(){
         double totalPrice = 0;
@@ -57,9 +60,24 @@ public class CartActivity extends AppCompatActivity {
 
 
     public void goToOrder(View view){
+        if (!cart.isEmpty()){
         Intent orderIntent = new Intent(getApplicationContext(),OrderActivity.class);
         orderIntent.putExtra("totalPrice", calculateTotalPrice());
         startActivity(orderIntent);
+    }
+    else {
+            Toast.makeText(getApplicationContext(),"The Cart is empty",Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void removeItem(int position){
+        cart.removeFromCart(position);
+        mRecyclerAdapter.notifyItemRemoved(position);
+        updateTotalPrice();
+    }
+
+    private void updateTotalPrice(){
+        String totalPrice = "Total Price = $" + new DecimalFormat("##.##").format(calculateTotalPrice());
+        mTotalPriceView.setText(totalPrice);
     }
 
 }

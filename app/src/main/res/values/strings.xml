@@ -30,4 +30,5 @@
     <string name="quantity_text">Quantity</string>
     <string name="content">Content</string>
     <string name="price">Price</string>
+    <string name="deleteimage">DeleteImage</string>
 </resources>
