@@ -6,10 +6,10 @@
     app:cardCornerRadius="4dp">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="102dp"
+        android:layout_width="411dp"
+        android:layout_height="155dp"
         android:layout_margin="4dp"
-        android:background="#6A75B1">
+        android:background="@color/gray_yellow">
 
 
         <ImageView
@@ -22,33 +22,36 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="2dp"
-            android:padding="2dp"
-            android:contentDescription="@string/food_image" />
+            android:contentDescription="@string/food_image"
+            android:padding="2dp" />
 
         <TextView
             android:id="@+id/nameTextView"
-            android:layout_width="199dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginLeft="7dp"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="6dp"
             android:layout_toEndOf="@id/itemImageView"
             android:layout_toRightOf="@id/itemImageView"
             android:text="@string/name"
             android:textColor="@color/black"
+            android:gravity="center"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/contentTextView"
-            android:layout_width="206dp"
-            android:layout_height="45dp"
+            android:layout_width="199dp"
+            android:layout_height="92dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="6dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginTop="57dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="52dp"
             android:layout_toEndOf="@id/itemImageView"
             android:layout_toRightOf="@id/itemImageView"
+            android:fontFamily="@font/dancing_script"
             android:text="@string/content"
             android:textColor="@color/black"
             android:textSize="12sp"

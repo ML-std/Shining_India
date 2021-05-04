@@ -4,76 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".Menu.ItemActivity">
-
-    <Button
-        android:id="@+id/increaseButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
-        android:onClick="increaseQuantity"
-        android:text="@string/increase"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceView" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="308dp"
-        android:layout_height="199dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/food_image" />
-
-    <TextView
-        android:id="@+id/nameView"
-        android:layout_width="158dp"
-        android:layout_height="41dp"
-        android:text="@string/placeHolder"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.067" />
-
-    <TextView
-        android:id="@+id/priceView"
-        android:layout_width="157dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/placeHolder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contentView" />
 
     <TextView
         android:id="@+id/contentView"
-        android:layout_width="159dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="242dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dancing_script"
         android:text="@string/placeHolder"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameView" />
-
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:onClick="addToCart"
-        android:text="@string/add_to_cart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceView" />
 
     <Button
         android:id="@+id/decreaseButton"
@@ -81,7 +26,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="84dp"
         android:layout_marginLeft="84dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:onClick="decreaseQuantity"
         android:text="@string/decrease"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,11 +36,14 @@
         android:id="@+id/QuantityText"
         android:layout_width="74dp"
         android:layout_height="31dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/dancing_script"
+        android:gravity="center"
         android:text="@string/placeHolder"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/increaseButton"
-        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toEndOf="@+id/decreaseButton"
         app:layout_constraintTop_toBottomOf="@+id/priceView" />
 
@@ -103,15 +51,77 @@
         android:id="@+id/cartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
+        android:contentDescription="@string/todo"
         android:focusable="true"
         android:onClick="goToCart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_shopping_cart_24"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="308dp"
+        android:layout_height="199dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/food_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="158dp"
+        android:layout_height="41dp"
+        android:text="@string/placeHolder"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.064" />
+
+    <Button
+        android:id="@+id/increaseButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:onClick="increaseQuantity"
+        android:text="@string/increase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceView" />
+
+    <TextView
+        android:id="@+id/priceView"
+        android:layout_width="157dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/placeHolder"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentView" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:onClick="addToCart"
+        android:text="@string/add_to_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

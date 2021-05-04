@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
      EditText phoneText, passwordText;
      Button mLoginButton;
-     ImageView showPassBox;
+     ImageView showPassBox, logoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         phoneText = findViewById(R.id.phoneText);
         passwordText = findViewById(R.id.passwordText);
         showPassBox = findViewById(R.id.showPassBox);
+        logoView = findViewById(R.id.imageView2);
+        logoView.setImageResource(R.drawable.shining_logo);
     }
 
     public void startRegister(View view){

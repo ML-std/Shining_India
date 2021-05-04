@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.shiningindia.Home.HomeActivity;
 import com.example.shiningindia.Menu.MenuActivity;
@@ -82,7 +83,8 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     public void bookTable(View view){
-
+        Toast.makeText(getApplicationContext(),"Your reservation has been received. Have a look on our menu!",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), MenuActivity.class));
     }
 
     private void updateLabel() {

@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".Register.RegisterActivity">
 
     <EditText
         android:id="@+id/phoneNumberText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="112dp"
+        android:autofillHints="@string/enter_phone_number"
         android:ems="10"
         android:hint="@string/enter_phone_number"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="@string/enter_phone_number" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/createPasswordText"
@@ -38,14 +39,15 @@
         android:id="@+id/createPasswordText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="32dp"
+        android:autofillHints="@string/enter_password_again"
         android:ems="10"
         android:hint="@string/enter_password_again"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPasswordText"
-        android:autofillHints="@string/enter_password_again" />
+        app:layout_constraintTop_toBottomOf="@+id/createPasswordText" />
 
     <Button
         android:id="@+id/registerButton"

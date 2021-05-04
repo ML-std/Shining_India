@@ -36,7 +36,7 @@ public class OrderActivity extends AppCompatActivity {
         Intent orderIntent = getIntent();
         totalPrice =(double)  orderIntent.getSerializableExtra("totalPrice");
         mAddressText = findViewById(R.id.addressText);
-        mAddressTextView = findViewById(R.id.addressTextView);
+        mAddressTextView = findViewById(R.id.InfoTextView);
         mTotalPriceTextView = findViewById(R.id.totalPriceTextView);
         mPaymentOptionsView = findViewById(R.id.paymentOptionsView);
         mPaymentOptionsGroup = findViewById(R.id.paymentOptionsGroup);

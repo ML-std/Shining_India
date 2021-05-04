@@ -4,14 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".Order.OrderActivity">
 
     <TextView
-        android:id="@+id/addressTextView"
-        android:layout_width="126dp"
-        android:layout_height="51dp"
+        android:id="@+id/InfoTextView"
+        android:layout_width="227dp"
+        android:layout_height="61dp"
         android:layout_marginTop="32dp"
-        android:text="@string/address"
+        android:fontFamily="@font/dancing_script"
+        android:gravity="center"
+        android:text="@string/order_your_meal_now"
+        android:textColor="#E9A69D3F"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,16 +34,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressTextView"
+        app:layout_constraintTop_toBottomOf="@+id/InfoTextView"
         android:autofillHints="@string/address" />
 
     <RadioGroup
         android:id="@+id/paymentOptionsGroup"
-        android:layout_width="196dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="206dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/paymentOptionsView">
 
         <RadioButton
@@ -64,7 +70,9 @@
         android:id="@+id/paymentOptionsView"
         android:layout_width="188dp"
         android:layout_height="35dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/dancing_script"
+        android:gravity="center"
         android:text="@string/payment_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -73,10 +81,12 @@
 
     <TextView
         android:id="@+id/totalPriceTextView"
-        android:layout_width="144dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="184dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
         android:text="@string/placeHolder"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,11 +96,12 @@
         android:id="@+id/orderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:onClick="order"
         android:text="@string/order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

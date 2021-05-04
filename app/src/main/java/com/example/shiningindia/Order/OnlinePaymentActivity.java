@@ -53,7 +53,7 @@ public class OnlinePaymentActivity extends AppCompatActivity {
 
     }
     public void payAndOrder(View view){
-        Toast.makeText(getApplicationContext(),"We Received Your payment and Order!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"We Received Your payment and order!", Toast.LENGTH_LONG).show();
         startActivity(new Intent(getApplicationContext(), MenuActivity.class));
     }
     private void updateLabel() {

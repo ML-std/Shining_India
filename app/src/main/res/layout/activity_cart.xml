@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/gray"
     tools:context=".Order.CartActivity">
 
 
@@ -35,6 +35,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="132dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:text="@string/placeHolder" />
 
 

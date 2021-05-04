@@ -9,7 +9,7 @@ app:cardCornerRadius="4dp">
         android:layout_width="wrap_content"
         android:layout_height="121dp"
         android:layout_margin="4dp"
-        android:background="#6A75B1">
+        android:background="@color/gray_yellow">
 
 
         <ImageView
@@ -29,14 +29,16 @@ app:cardCornerRadius="4dp">
             android:id="@+id/nameTextView"
             android:layout_width="145dp"
             android:layout_height="100dp"
+            android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="17dp"
             android:layout_toEndOf="@id/itemImageView"
             android:layout_toRightOf="@id/itemImageView"
             android:text="@string/name"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:gravity="center"
             android:textStyle="bold" />
 
         <TextView
@@ -50,6 +52,7 @@ app:cardCornerRadius="4dp">
             android:layout_toEndOf="@+id/quantityTextView"
             android:layout_toRightOf="@+id/quantityTextView"
             android:text="@string/price"
+            android:gravity="center"
             android:textSize="17sp" />
 
         <TextView
@@ -62,6 +65,7 @@ app:cardCornerRadius="4dp">
             android:layout_marginTop="14dp"
             android:layout_toEndOf="@+id/nameTextView"
             android:layout_toRightOf="@+id/nameTextView"
+            android:gravity="center"
             android:text="@string/quantity_text" />
 
         <ImageView
