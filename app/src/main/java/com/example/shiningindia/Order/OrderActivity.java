@@ -20,6 +20,7 @@ import java.text.DecimalFormat;
 public class OrderActivity extends AppCompatActivity {
 
     double totalPrice;
+    String totalPriceText;
     TextView mAddressTextView;
     TextView mTotalPriceTextView;
     TextView mPaymentOptionsView;
@@ -33,7 +34,7 @@ public class OrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
         Intent orderIntent = getIntent();
-        totalPrice =(double) orderIntent.getSerializableExtra("totalPrice");
+        totalPrice =(double)  orderIntent.getSerializableExtra("totalPrice");
         mAddressText = findViewById(R.id.addressText);
         mAddressTextView = findViewById(R.id.addressTextView);
         mTotalPriceTextView = findViewById(R.id.totalPriceTextView);
@@ -43,17 +44,20 @@ public class OrderActivity extends AppCompatActivity {
         mCreditCartButton = findViewById(R.id.creditCartButton);
         mOnlinePaymentButton = findViewById(R.id.onlinePayment);
         mOrderButton = findViewById(R.id.orderButton);
-        String totalPriceText = "Total Price = $" + new DecimalFormat("##.##").format(totalPrice);
+        totalPriceText = "Total Price = $" + new DecimalFormat("##.##").format(totalPrice);
         mTotalPriceTextView.setText(totalPriceText);
     }
 
     public void order(View view){
         if (mOnlinePaymentButton.isChecked()){
-            startActivity(new Intent(getApplicationContext(),OnlinePaymentActivity.class));
+            Intent orderIntent = new Intent(getApplicationContext(),OnlinePaymentActivity.class);
+            orderIntent.putExtra("totalPrice", totalPriceText);
+            startActivity(orderIntent);
+
         }
-        else
+        else{
         Toast.makeText(getApplicationContext(),"We Received Your Order!", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+        startActivity(new Intent(getApplicationContext(), MenuActivity.class));}
     }
 
 }
