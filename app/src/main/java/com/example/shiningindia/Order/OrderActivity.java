@@ -25,7 +25,7 @@ public class OrderActivity extends AppCompatActivity {
     TextView mPaymentOptionsView;
     EditText mAddressText;
     RadioGroup mPaymentOptionsGroup;
-    RadioButton mCashButton, mCreditCartButton;
+    RadioButton mCashButton, mCreditCartButton, mOnlinePaymentButton;
     Button mOrderButton;
 
     @Override
@@ -41,12 +41,17 @@ public class OrderActivity extends AppCompatActivity {
         mPaymentOptionsGroup = findViewById(R.id.paymentOptionsGroup);
         mCashButton = findViewById(R.id.cashButton);
         mCreditCartButton = findViewById(R.id.creditCartButton);
+        mOnlinePaymentButton = findViewById(R.id.onlinePayment);
         mOrderButton = findViewById(R.id.orderButton);
         String totalPriceText = "Total Price = $" + new DecimalFormat("##.##").format(totalPrice);
         mTotalPriceTextView.setText(totalPriceText);
     }
 
     public void order(View view){
+        if (mOnlinePaymentButton.isChecked()){
+            startActivity(new Intent(getApplicationContext(),OnlinePaymentActivity.class));
+        }
+        else
         Toast.makeText(getApplicationContext(),"We Received Your Order!", Toast.LENGTH_LONG).show();
         startActivity(new Intent(getApplicationContext(), MenuActivity.class));
     }

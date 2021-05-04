@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.shiningindia.Home.HomeActivity;
 import com.example.shiningindia.Menu.MenuActivity;
 import com.example.shiningindia.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+
 
 public class BookingActivity extends AppCompatActivity {
 
@@ -21,6 +24,7 @@ public class BookingActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationView.setSelectedItemId(R.id.booking_item);
         onNavbarClicked();
+
     }
     public void onNavbarClicked(){
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
@@ -33,4 +37,9 @@ public class BookingActivity extends AppCompatActivity {
             return true;
         });
     }
+
+    public void bookTable(View view){
+
+    }
+
 }

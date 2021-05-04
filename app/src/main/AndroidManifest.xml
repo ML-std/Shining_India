@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShiningIndia">
-        <activity android:name=".Home.HomeActivity"></activity>
+        <activity android:name=".Order.OnlinePaymentActivity" />
+        <activity android:name=".Home.HomeActivity" />
         <activity android:name=".Order.CartActivity" />
         <activity android:name=".Booking.BookingActivity" />
         <activity android:name=".Menu.ItemActivity" />

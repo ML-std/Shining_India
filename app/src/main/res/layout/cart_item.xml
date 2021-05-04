@@ -78,7 +78,7 @@ app:cardCornerRadius="4dp">
             android:layout_marginRight="1dp"
             android:layout_toEndOf="@+id/priceTextView"
             android:layout_toRightOf="@+id/priceTextView"
-            android:contentDescription="@string/deleteimage"
+            android:contentDescription="@string/delete_image"
             app:srcCompat="@drawable/ic_baseline_delete_24" />
     </RelativeLayout>
 
