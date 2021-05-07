@@ -2,9 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bookButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
+    android:onClick="bookTable"
     tools:context=".Booking.BookingActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,7 +26,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="82dp"
         android:layout_marginRight="82dp"
@@ -46,26 +47,11 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:autofillHints=""
-        android:focusable="false"
-
         android:ems="10"
+
+        android:focusable="false"
         android:hint="@string/date_of_reservation"
         android:inputType="date" />
-
-    <Button
-        android:id="@+id/bookButton"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/timeText"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="139dp"
-        android:layout_marginLeft="139dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginBottom="150dp"
-        android:onClick="bookTable"
-        android:text="@string/book_a_table" />
 
     <EditText
         android:id="@+id/guestNumberText"
@@ -89,13 +75,12 @@
         android:layout_below="@+id/bookingDate"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:autofillHints=""
-        android:focusable="false"
         android:ems="10"
+        android:focusable="false"
         android:hint="@string/time_of_reservation"
         android:inputType="time" />
 
@@ -113,6 +98,16 @@
         android:ems="10"
         android:hint="@string/email_address"
         android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="179dp"
+        android:layout_height="66dp"
+        android:layout_below="@+id/timeText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:onClick="bookTable"
+        android:text="Book A Table" />
 
 
 </RelativeLayout>

@@ -19,9 +19,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="33dp"
             android:contentDescription="@string/food_image"
             android:padding="2dp" />
 
@@ -65,14 +65,15 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginStart="-2dp"
-            android:layout_marginLeft="-2dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:layout_toEndOf="@+id/nameTextView"
             android:layout_toRightOf="@+id/nameTextView"
             android:text="@string/price"
+            android:gravity="center"
             android:textSize="17sp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
